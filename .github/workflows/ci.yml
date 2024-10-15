@@ -13,3 +13,7 @@ jobs:
         uses: matlab-actions/run-build@v2
         with:
           tasks: check
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: issues.sarif          
