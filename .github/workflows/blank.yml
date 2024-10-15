@@ -1,0 +1,11 @@
+name: Run Default Tasks in Build File
+on: [push]
+jobs:
+  my-job:
+    name: Run MATLAB Build
+    runs-on: self-hosted
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Run build
+        uses: matlab-actions/run-build@v2
