@@ -1,0 +1,49 @@
+{
+  "version": "2.1.0",
+  "properties": {
+    "Date": "14-Oct-2024 14:39:21",
+    "Release": "R2025a",
+    "CodeAnalyzerConfiguration": "active"
+  },
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Code Analyzer"
+        }
+      },
+      "originalUriBaseIds": {
+        "SourceRoot": {
+          "uri": "file:///C:/work/paas/experiments/sarif/sarif2/top/sf2/"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uriBaseId": "SourceRoot",
+            "uri": "buildfile.m"
+          }
+        },
+        {
+          "location": {
+            "uriBaseId": "SourceRoot",
+            "uri": "code/dayofyear.m"
+          }
+        },
+        {
+          "location": {
+            "uriBaseId": "SourceRoot",
+            "uri": "tests/ParameterizedTestExample.m"
+          }
+        },
+        {
+          "location": {
+            "uriBaseId": "SourceRoot",
+            "uri": "tests/TestExamples.m"
+          }
+        }
+      ],
+      "results": []
+    }
+  ]
+}
