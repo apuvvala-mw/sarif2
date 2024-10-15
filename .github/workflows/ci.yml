@@ -16,8 +16,8 @@ jobs:
       - name: Upload SARIF artifact
         uses: actions/upload-artifact@v3
         with:
-          name: issues.sarif
-          path: ./build
+          name: issues
+          path: ./issues.sarif
       - name: Upload SARIF file for scanning
         uses: github/codeql-action/upload-sarif@v3
         with:
