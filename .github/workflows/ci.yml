@@ -18,7 +18,7 @@ jobs:
         with:
           name: issues.sarif
           path: ./build
-        - name: Upload SARIF file for scanning
+      - name: Upload SARIF file for scanning
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: issues.sarif          
