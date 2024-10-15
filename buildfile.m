@@ -3,23 +3,14 @@ import matlab.buildtool.tasks.*
 
 plan = buildplan(localfunctions);
 
+addpath("code");
+plan("clean") = CleanTask;
+plan("check").Outputs.Filename = files(plan, "issues.sarif");
+
 plan.DefaultTasks = "check";
 end
 
-function checkTask(~)
-origDir = pwd();
-cd("top/sf1");
-buildtool("check");
-cd(origDir);
-cd("top/sf2");
-buildtool("check");
-end
-
-function cleanTask(~)
-origDir = pwd();
-cd("top/sf1");
-buildtool("clean");
-cd(origDir);
-cd("top/sf2");
-buildtool("clean");
+function checkTask(ctx)
+issues = codeIssues();
+export(issues, ctx.Task.Outputs.Filename.paths(), SourceRoot=ctx.Plan.RootFolder);
 end
